@@ -8,16 +8,19 @@ If but_ok=true Then
 WpfWindow("Micro Focus MyFlight Sample").WpfButton("OK").Click @@ hightlight id_;_1886094320_;_script infofile_;_ZIP::ssf7.xml_;_
 If WpfWindow("Micro Focus MyFlight Sample").Dialog("Login Failed").Exist(2) Then
 	WpfWindow("Micro Focus MyFlight Sample").Dialog("Login Failed").WinButton("OK").Click
-	MsgBox "Something Error"
+	'MsgBox "Something Error"
+	Reporter.ReportEvent micPass, "Login Authorization", "Something wrong for agent name/pwd."
 	WpfWindow("Micro Focus MyFlight Sample").Close
 	ElseIf WpfWindow("Micro Focus MyFlight Sample").WpfObject("Hello").Exist(4) Then
-	MsgBox "Login Sucessfull"
+	'MsgBox "Login Sucessfull"
+	Reporter.ReportEvent micPass, "Login Authorization", "Login Sucessfull."
 	WpfWindow("Micro Focus MyFlight Sample").Close
 	
 End If
 'confirm_check = WpfWindow("Micro Focus MyFlight Sample").WpfObject("Hello").GetROProperty("text")
 Else
    WpfWindow("Micro Focus MyFlight Sample").Close
-   MsgBox "Password/Agent Name is missing"	
+   'MsgBox "Password/Agent Name is missing"	
+   Reporter.ReportEvent micPass, "Login Authorization", "Agentname/Password is missing"
 End If
 
