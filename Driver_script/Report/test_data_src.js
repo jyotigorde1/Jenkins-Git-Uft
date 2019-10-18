@@ -1,0 +1,1 @@
+﻿var __testDataSource={items:[{dataFilePath:'Default.xls',dataFileFormat:'excel',dataFileFolder:'C:\\Git\\Jenkins-Git-Uft\\Driver_script\\Res1',namePairs:[]}]};
